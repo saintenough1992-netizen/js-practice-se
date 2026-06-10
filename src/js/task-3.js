@@ -43,13 +43,6 @@ function getWeather(lat, lon, timezone) {
     });
 }
 
-getWeather(50, 36, Intl.DateTimeFormat().resolvedOptions().timeZone)
-  .then(renderWeather)
-  .catch(e => {
-    console.error(e);
-    alert('Error getting weather.');
-  });
-
 function parseCurrentWeather({ current, daily }) {
   const {
     temperature_2m: currentTemp,
