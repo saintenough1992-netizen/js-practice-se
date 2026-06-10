@@ -1,6 +1,27 @@
 import axios from 'axios';
 import { ICON_MAP } from './iconMap-t3';
 
+navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
+
+function positionSuccess({ coords }) {
+  getWeather(
+    coords.latitude,
+    coords.longitude,
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  )
+    .then(renderWeather)
+    .catch(e => {
+      console.error(e);
+      alert('Error getting weather.');
+    });
+}
+
+function positionError() {
+  alert(
+    'Something went wrong with getting your location. Please allow usage of your location and refresh the page'
+  );
+}
+
 function getWeather(lat, lon, timezone) {
   return axios
     .get(

@@ -26,7 +26,7 @@ function setupMap(center) {
   map.addControl(nav);
 
   var directions = new MapboxDirections({
-    accessToken: 'YOUR-MAPBOX-ACCESS-TOKEN',
+    accessToken: API_TOKEN,
   });
 
   map.addControl(
