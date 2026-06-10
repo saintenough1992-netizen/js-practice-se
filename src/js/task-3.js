@@ -106,7 +106,7 @@ function setValue(selector, value, { parent = document } = {}) {
 }
 
 function getIconUrl(iconCode) {
-  return new URL(`./img/${ICON_MAP.get(iconCode)}.svg`, import.meta.url).href;
+  return new URL(`../img/${ICON_MAP.get(iconCode)}.svg`, import.meta.url).href;
 }
 
 const currentIcon = document.querySelector('[data-current-icon]');
