@@ -102,7 +102,7 @@ function setValue(selector, value, { parent = document } = {}) {
 }
 
 function getIconUrl(iconCode) {
-  return `/img/${ICON_MAP.get(iconCode)}.svg`;
+  return `js-practice-se/assets/${ICON_MAP.get(iconCode)}.svg`;
 }
 
 const currentIcon = document.querySelector('[data-current-icon]');
