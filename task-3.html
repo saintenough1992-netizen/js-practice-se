@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/weather.css" />
+    <title>Weather App KH</title>
+    <script type="module" crossorigin src="/js-practice-se/task-3.js"></script>
+    <link rel="modulepreload" crossorigin href="/js-practice-se/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/js-practice-se/assets/vendor-CC12I-6Z.js">
+  </head>
+  <body class="blurred">
+    <header class="header">
+      <div class="header-left">
+        <img class="weather-icon large" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20512%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M361.5%201.2c5%202.1%208.6%206.6%209.6%2011.9L391%20121l107.9%2019.8c5.3%201%209.8%204.6%2011.9%209.6s1.5%2010.7-1.6%2015.2L446.9%20256l62.3%2090.3c3.1%204.5%203.7%2010.2%201.6%2015.2s-6.6%208.6-11.9%209.6L391%20391%20371.1%20498.9c-1%205.3-4.6%209.8-9.6%2011.9s-10.7%201.5-15.2-1.6L256%20446.9l-90.3%2062.3c-4.5%203.1-10.2%203.7-15.2%201.6s-8.6-6.6-9.6-11.9L121%20391%2013.1%20371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7%201.6-15.2L65.1%20256%202.8%20165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6%2011.9-9.6L121%20121%20140.9%2013.1c1-5.3%204.6-9.8%209.6-11.9s10.7-1.5%2015.2%201.6L256%2065.1%20346.3%202.8c4.5-3.1%2010.2-3.7%2015.2-1.6zM352%20256c0%2053-43%2096-96%2096s-96-43-96-96s43-96%2096-96s96%2043%2096%2096zm32%200c0-70.7-57.3-128-128-128s-128%2057.3-128%20128s57.3%20128%20128%20128s128-57.3%20128-128z'/%3e%3c/svg%3e" data-current-icon />
+        <div class="header-current-temp">
+          <span data-current-temp>31</span>&deg;
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="info-group">
+          <div class="label">High</div>
+          <div><span data-current-high>32</span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">FL High</div>
+          <div><span data-current-fl-high>27</span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Wind</div>
+          <div>
+            <span data-current-wind>9</span
+            ><span class="value-sub-info">km/h</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <div class="label">Low</div>
+          <div><span data-current-low>19</span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">FL Low</div>
+          <div><span data-current-fl-low>12</span>&deg;</div>
+        </div>
+        <div class="info-group">
+          <div class="label">Precip</div>
+          <div>
+            <span data-current-precip>0.1</span
+            ><span class="value-sub-info">mm</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="day-section" data-day-section>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Monday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Tuesday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Wednesday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Thursday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Friday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Saturday</div>
+        <div>32&deg;</div>
+      </div>
+      <div class="day-card">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20640%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20336c0%2079.5%2064.5%20144%20144%20144H512c70.7%200%20128-57.3%20128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7%206.4-22.4%206.4-34.6c0-53-43-96-96-96c-19.7%200-38.1%206-53.3%2016.2C367%2064.2%20315.3%2032%20256%2032C167.6%2032%2096%20103.6%2096%20192c0%202.7%20.1%205.4%20.2%208.1C40.2%20219.8%200%20273.2%200%20336z'/%3e%3c/svg%3e" class="weather-icon" />
+        <div class="day-card-day">Sunday</div>
+        <div>32&deg;</div>
+      </div>
+    </section>
+    <table class="hour-section">
+      <tbody data-hour-section>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>3 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>4 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>5 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>6 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>7 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>8 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>9 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>10 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label">Thursday</div>
+              <div>11 PM</div>
+            </div>
+          </td>
+          <td>
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='hsl(200,%20100%25,%2020%25)'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.2.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202022%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M128%20320c-53%200-96-43-96-96c0-42.5%2027.6-78.6%2065.9-91.2C96.7%20126.1%2096%20119.1%2096%20112C96%2050.1%20146.1%200%20208%200c43.1%200%2080.5%2024.3%2099.2%2060c14.7-17.1%2036.5-28%2060.8-28c44.2%200%2080%2035.8%2080%2080c0%205.5-.6%2010.8-1.6%2016c.5%200%201.1%200%201.6%200c53%200%2096%2043%2096%2096s-43%2096-96%2096H128zm-14.5%2033.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm120%200c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6zm244.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6s17.8%2019.3%2012.6%2031.5zM345.5%20353.9c12.2%205.2%2017.8%2019.3%2012.6%2031.5l-48%20112c-5.2%2012.2-19.3%2017.8-31.5%2012.6s-17.8-19.3-12.6-31.5l48-112c5.2-12.2%2019.3-17.8%2031.5-12.6z'/%3e%3c/svg%3e" class="weather-icon" />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Temp</div>
+              <div>31&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Fl temp</div>
+              <div>25&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Wind</div>
+              <div>6<span class="value-sub-info">km/h</span></div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">Precip</div>
+              <div>0<span class="value-sub-info">mm</span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <template id="day-card-template">
+      <div class="day-card">
+        <img data-icon class="weather-icon" />
+        <div class="day-card-day" data-date></div>
+        <div><span data-temp></span><span>&deg;</span></div>
+      </div></template
+    >
+    <template id="hour-row-template">
+      <tr class="hour-row">
+        <td>
+          <div class="info-group">
+            <div class="label" data-day></div>
+            <div data-time></div>
+          </div>
+        </td>
+        <td>
+          <img data-icon class="weather-icon" />
+        </td>
+        <td>
+          <div class="info-group">
+            <div class="label">Temp</div>
+            <div><span data-temp></span><span>&deg;</span></div>
+          </div>
+        </td>
+        <td>
+          <div class="info-group">
+            <div class="label">Fl temp</div>
+            <div><span data-fl-temp></span><span>&deg;</span></div>
+          </div>
+        </td>
+        <td>
+          <div class="info-group">
+            <div class="label">Wind</div>
+            <div>
+              <span data-wind></span><span class="value-sub-info">km/h</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="info-group">
+            <div class="label">Precip</div>
+            <div>
+              <span data-precip></span><span class="value-sub-info">mm</span>
+            </div>
+          </div>
+        </td>
+      </tr></template
+    >
+  </body>
+</html>
